@@ -84,10 +84,11 @@
         <div class="row justify-content-center align-items-center">
             <div class="col-10 col-md-10 col-lg-8" id="Bluh">
                 <form id="tui">
-                    <h1>Semister 1</h1>
-                    <div class="form-itself" style="padding-top: 50px;" id="formitself" >
-                   <div class="form-list" id="fromlist">
                     
+                    <div class="form-itself" style="padding-top: 50px;" id="formitself" >
+                        
+                   <div class="form-list box" id="fromlist">
+                    <h1>Semister 1</h1>
                     <div class="form-row" style="padding-top: 50px;" id="formrow">
                         <div class="blah">
                             <div class="box"> 
@@ -207,17 +208,10 @@
         function addnewForm(current) {
             
             var clonedForm = $(current).parents('.form-itself').find('.form-list').first().clone();
-            $(current).parents('.form-itself').append(clonedForm);
-            var parentElement = document.getElementById('formitself');
-            var referenceElement = document.getElementById('formlist');
-
-            // Create the element you want to insert
-            var newElement = document.createElement('h1');
             semister+=1;
-            newElement.textContent = `Semister ${semister}`;
+            clonedForm.find("h1").eq(0).html(`Semister ${semister}`);
 
-            // Insert the new element before the reference element
-            parentElement.insertBefore(newElement, referenceElement);
+            
             $(current).parents('.form-itself').append(clonedForm);
         }
 
