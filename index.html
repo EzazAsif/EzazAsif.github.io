@@ -40,7 +40,7 @@
     }
     
     .form-control {
-        width: 100%;
+        width: 300%;
         padding: 10px;
         font-size: 16px;
         border: 1px solid #ccc;
@@ -127,6 +127,11 @@
                 </form>
             </div>
         </div>
+        <div class="box" id="box">
+            <h1>Your CGPA is: Undefined</h1>
+            <h1>Total credits: Undefined</h1>
+            <h1>Total credit points: Undefined</h1>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script >
@@ -174,14 +179,14 @@
             var referenceElement = document.getElementById('tui');
 
             // Create the element you want to insert
-            var textContent = `<div class="box">
+            var textContent = `
                 <h1>Your CGPA is: ${fcgpa}</h1>
                 <h1>Total credits: ${total_credit}</h1>
                 <h1>Total credit points: ${total_cgpa}</h1>
-            </div>`;
+            `;
 
             // Insert the new element before the reference element
-            parentElement.innerHTML += textContent;
+            document.getElementById("box").innerHTML = textContent;
         });
         function addFormElements(current) {
             
