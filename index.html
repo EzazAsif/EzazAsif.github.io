@@ -64,8 +64,8 @@
     }
 
     .image {
-        height:50px;
-        width:50px;
+        height:100px;
+        width:100px;
     }
     .box {
         border: 1px solid #ccc;
@@ -78,8 +78,10 @@
 <body>
 
     <div class="container">
-        <div class="title">
-            <h1>CGPA Calculator By Ezaz <img class="image" src=https://cdn.jim-nielsen.com/ios/512/calculator-2017-10-10.png?rf=1024></h1>
+        <div class="title box">
+            <img class="image" src="—Pngtree—calculator_1941129.png">
+            <h1 style=" font-family: 'Comic Sans MS', cursive">CGPA Calculator  </h1>
+            <h1 style=" font-family: 'Comic Sans MS', cursive"> By Ezaz </h1>
         </div>
         <div class="row justify-content-center align-items-center">
             <div class="col-10 col-md-10 col-lg-8" id="Bluh">
@@ -88,7 +90,7 @@
                     <div class="form-itself" style="padding-top: 50px;" id="formitself" >
                         
                    <div class="form-list box" id="fromlist">
-                    <h1>Semister 1</h1>
+                    <h1>Semester 1</h1>
                     <div class="form-row" style="padding-top: 50px;" id="formrow">
                         <div class="blah">
                             <div class="box"> 
@@ -172,11 +174,7 @@
             }
             
             var fcgpa=parseFloat(total_cgpa/total_credit);
-            console.log(cgpa);
-            console.log(credits);
-            console.log(total_cgpa);
-            console.log(total_credit);
-            console.log(fcgpa);
+            
 
             // Assuming you have a reference to the parent element and the element you want to insert before
             var parentElement = document.getElementById('Bluh');
@@ -209,7 +207,7 @@
             
             var clonedForm = $(current).parents('.form-itself').find('.form-list').first().clone();
             semister+=1;
-            clonedForm.find("h1").eq(0).html(`Semister ${semister}`);
+            clonedForm.find("h1").eq(0).html(`Semester ${semister}`);
 
             
             $(current).parents('.form-itself').append(clonedForm);
