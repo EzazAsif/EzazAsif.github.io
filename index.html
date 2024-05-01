@@ -40,7 +40,7 @@
     }
     
     .form-control {
-        width: 100%;
+        width: 300%;
         padding: 10px;
         font-size: 16px;
         border: 1px solid #ccc;
@@ -91,7 +91,7 @@
                     <div class="form-row" style="padding-top: 50px;" id="formrow">
                         <div class="blah">
                         <div class="form-group col-md-6">
-                            <input type="text" class="form-control" placeholder="">
+                            <input type="text" class="form-control" placeholder="Course name (not mandatory)">
                         </div>
                         <div class="form-group col-md-6">
                             <input type="text" class="form-control" placeholder="cg">
@@ -175,9 +175,9 @@
 
             // Create the element you want to insert
             var textContent = `<div class="box">
-                <h1>Your CGPA is ${fcgpa}</h1>
-                <h1>Total credits ${total_credit}</h1>
-                <h1>Total credit points ${total_cgpa}</h1>
+                <h1>Your CGPA is: ${fcgpa}</h1>
+                <h1>Total credits: ${total_credit}</h1>
+                <h1>Total credit points: ${total_cgpa}</h1>
             </div>`;
 
             // Insert the new element before the reference element
