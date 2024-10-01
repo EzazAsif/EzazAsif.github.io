@@ -37,6 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
             }, 5000);
             counter = 1; // Update counter
         } else {
+            revealButton.innerHTML = "Haha you touched it";
             // Update messages for the second click
             messages.splice(0, messages.length, "OOH", "You touch my tralalaa", "My bing bing bonggg"); 
             showerHearts(); // Shower hearts on button click
