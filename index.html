@@ -3,228 +3,113 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CGPA Calculator</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-<style> 
-    body {
-        background-color: #f8f9fa;
-        padding: 20px;
-    }
-    
-    .container {
-        background-color: #fff;
-        border-radius: 10px;
-        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        padding: 30px;
-    }
-    
-    .form-itself {
-        padding-top: 50px;
-    }
-    
-    .form-row {
-        padding-top: 50px;
-    }
-    
-    .form-group {
-        margin-bottom: 20px;
-    }
-    
-    .btn-success, .btn-danger, .btn-primary {
-        width: 100%;
-    }
-    
-    h1 {
-        font-size: 24px;
-        margin-bottom: 20px;
-    }
-    
-    .form-control {
-        width: 120%;
-        padding: 10px;
-        font-size: 16px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-    }
-    
-    .btn {
-        padding: 10px 20px;
-        margin-top: 10px; /* Add margin-top for spacing */
-        font-size: 16px;
-        border-radius: 5px;
-    }
-    
-    .btn-success, .btn-danger, .btn-primary {
-        width: auto; /* Change width to auto */
-    }
-    
-    .title {
-        text-align: center;
-        margin-bottom: 30px;
-    }
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.3.1/tailwind.min.css" rel="stylesheet">
+    <title>For My Love 💖</title>
+    <style>
+        .carousel {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        .carousel-inner {
+            display: flex;
+            transition: transform 1s ease-in-out;
+        }
+        .carousel img {
+            min-width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+        .dot {
+            height: 12px;
+            width: 12px;
+            margin: 4px;
+            background-color: #bbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+        }
+        .active {
+            background-color: #f87171;
+        }
+        .heart {
+            position: fixed;
+            color: #ff69b4;
+            font-size: 24px;
+            pointer-events: none;
+            animation: float 3s linear forwards;
+        }
 
-    .image {
-        height:100px;
-        width:100px;
-    }
-    .box {
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        padding: 20px;
-        margin-top: 20px;
-    }
-</style>    
+        @keyframes float {
+            0% {
+                transform: translateY(0) scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(-50vh) scale(1.2);
+                opacity: 0.8;
+            }
+            100% {
+                transform: translateY(-100vh) scale(0.8);
+                opacity: 0;
+            }
+        }
+    </style>
 </head>
-<body>
+<body class="bg-pink-50 flex items-center justify-center min-h-screen py-10">
+    <audio autoplay loop>
+        <source src="videoplayback.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+    <div class="bg-white rounded-lg shadow-xl p-10 text-center max-w-3xl mx-auto">
 
-    <div class="container">
-        <div class="title box">
-            <img class="image" src="—Pngtree—calculator_1941129.png">
-            <h1 style=" font-family: 'Comic Sans MS', cursive">CGPA Calculator  </h1>
-            <h1 style=" font-family: 'Comic Sans MS', cursive"> By Ezaz </h1>
+        <!-- Hero Section -->
+        <div class="mb-10">
+            <h1 class="text-5xl font-extrabold text-pink-600 mb-4">To My Dearest 💖</h1>
+            <h1 class="text-5xl font-extrabold text-pink-400 mb-4">Rathri 💖</h1>
+            <p class="text-xl italic text-gray-600">"Loving you is my favorite thing to do."</p>
         </div>
-        <div class="row justify-content-center align-items-center">
-            <div class="col-10 col-md-10 col-lg-8" id="Bluh">
-                <form id="tui">
-                    
-                    <div class="form-itself" style="padding-top: 50px;" id="formitself" >
-                        
-                   <div class="form-list box" id="fromlist">
-                    <h1>Semester 1</h1>
-                    <div class="form-row" style="padding-top: 50px;" id="formrow">
-                        <div class="blah">
-                            <div class="box"> 
-                            <h1> Course 1 </h1>   
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" placeholder="Course name (not mandatory)">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" placeholder="cg">
-                        </div>
-                        <div class="form-group col-md-6">
-                            <input type="text" class="form-control" placeholder="credit">
-                        </div>
-                        <div class="form-group col-md-1">
-                            <button type="button" class="btn btn-success" onclick="addFormElements(this)">Add Course</button>
-                        </div>
-                        <div class="form-group col-md-1">
-                            <button type="button" class="btn btn-danger" onclick="removeFormElements(this)">Remove Course</button>
-                        </div>
-                    </div>
-                    </div>
-                    </div>
-                    <div class="form-group col-md-1">
-                        <button type="button" class="btn btn-success" onclick="addnewForm(this)">Add Semester</button>
-                    </div>
-                    <div class="form-group col-md-1">
-                        <button type="button" class="btn btn-danger" onclick="removeForm(this)">Remove Semester</button>
-                    </div>
-                    </div>
-                    
-                    
-                </div>
-                <div  style="padding-top: 50px;">
-                    
-                    <button type="Submit" class="btn btn-primary">
-                        Submit
-                    </button>
-                
-                </div>
-                </form>
+
+        <!-- Image Carousel -->
+        <div class="relative mb-10 carousel">
+            <div class="carousel-inner">
+                <img src="1.jpeg" alt="Memory 1">
+                <img src="2.jpeg" alt="Memory 2">
+                <img src="3.jpeg" alt="Memory 3">
+            </div>
+            <!-- Navigation Buttons -->
+            <button id="prev" class="absolute top-1/2 left-4 bg-pink-500 text-white rounded-full w-10 h-10 transform -translate-y-1/2 hover:bg-pink-700">‹</button>
+            <button id="next" class="absolute top-1/2 right-4 bg-pink-500 text-white rounded-full w-10 h-10 transform -translate-y-1/2 hover:bg-pink-700">›</button>
+            <!-- Dots Indicator -->
+            <div class="flex justify-center mt-4" id="dots-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
             </div>
         </div>
-        <div class="box" id="box">
-    <span style="display: inline;">
-        <h1>Your CGPA is:</h1>
-        <h4 style="font-family: 'Comic Sans MS', cursive">(will be shown here)</h4>
-    </span>
-    <span style="display: inline;">
-        <h1>Total credits:</h1>
-        <h4 style="font-family: 'Comic Sans MS', cursive">(will be shown here)</h4>
-    </span>
-    <span style="display: inline;">
-        <h1>Total credit points:</h1>
-        <h4 style="font-family: 'Comic Sans MS', cursive">(will be shown here)</h4>
-    </span>
-</div>
+
+        <!-- Romantic Message Section -->
+        <div class="mb-6">
+            <p class="text-xl italic text-gray-800 change fade">
+                You are the most wonderful person in my life, and I am so grateful to share every moment with you. 
+                Your smile brightens even the darkest of days, and your love is all I need.
+            </p>
+        </div>
+        <p class="text-xl font-semibold text-pink-500 mb-6 hidden" id="hidden-message">
+            I love you more than words can say! ❤️
+        </p>
+        
+        <!-- Reveal Button -->
+        <button 
+            id="reveal-button"
+            class="bg-pink-500 text-white px-6 py-3 rounded-full shadow-lg hover:bg-pink-600 focus:outline-none transform hover:scale-105 transition-transform duration-200"
+        >
+            Click to Reveal My Heart
+        </button>
     </div>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script >
-        var semister=1;course=1;
-        var element = document.querySelector("form");
-        
-        element.addEventListener("submit", (event) => {
-            var inputs = document.querySelectorAll("input");
-            event.preventDefault();
-            var cgpa=[];
-            var credits=[];
-            var total_cgpa=0.0,total_credit=0.0;
-            for (var key in inputs) {
-                
-                if((parseInt(key)+1)%3==0){
-                    var value=inputs[key].value;
-                    if(!value){
-                        value=0;
-                    }
-                    credits.push(value);
-                }
-                else if (parseInt(key)%3!=0){
-                    var value=parseFloat(inputs[key].value);
-                    if(!value){
-                        value=parseFloat(0);
-                    }
-                    cgpa.push(value);
-                }
-                
-            }   
-            for(var key in credits){
-                total_cgpa+=parseFloat(cgpa[key]*credits[key]);
-                total_credit+=parseFloat(credits[key]);
-            }
-            
-            var fcgpa=parseFloat(total_cgpa/total_credit);
-            
-
-            // Assuming you have a reference to the parent element and the element you want to insert before
-            var parentElement = document.getElementById('Bluh');
-            var referenceElement = document.getElementById('tui');
-
-            // Create the element you want to insert
-            var textContent = `
-                <h1>Your CGPA is: ${fcgpa}</h1>
-                <h1>Total credits: ${total_credit}</h1>
-                <h1>Total credit points: ${total_cgpa}</h1>
-            `;
-
-            // Insert the new element before the reference element
-            document.getElementById("box").innerHTML = textContent;
-        });
-        function addFormElements(current) {
-            
-            var  clonedRow = $(current).parents('.blah').clone();
-             course+=1;
-            clonedRow.find("h1").html(`Course ${course}`);
-            
-            $(current).parents('.form-row').append(clonedRow);
-        }
-        
-        
-        function removeFormElements(current) {
-            $(current).parents('.blah').remove();
-        }
-        function addnewForm(current) {
-            
-            var clonedForm = $(current).parents('.form-itself').find('.form-list').first().clone();
-            semister+=1;
-            clonedForm.find("h1").eq(0).html(`Semester ${semister}`);
-
-            
-            $(current).parents('.form-itself').append(clonedForm);
-        }
-
-        function removeForm(current) {
-            $(current).parents('.form-list').remove();
-        }
-    </script>
+    <div id="heart-container"></div>
+    <script src="propose.js"></script>
+    
 </body>
 </html>
