@@ -7,6 +7,16 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/3.3.1/tailwind.min.css" rel="stylesheet">
     <title>For My Love 💖</title>
     <style>
+       .carousel-container {
+            position: relative;
+            max-width: 600px;
+            height: 700px; /* Increased height for a taller carousel */
+            margin: 20px auto;
+            overflow: hidden;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
         .carousel {
             position: relative;
             height: 300px;
@@ -57,9 +67,10 @@
         }
     </style>
 </head>
+
 <body class="bg-pink-50 flex items-center justify-center min-h-screen py-10">
     <audio autoplay loop>
-        <source src="videoplayback.mp3" type="audio/mpeg">
+        <source src="https://cdn.pixabay.com/audio/2022/03/29/audio_119b1d0a6b.mp3" type="audio/mpeg">
         Your browser does not support the audio element.
     </audio>
     <div class="bg-white rounded-lg shadow-xl p-10 text-center max-w-3xl mx-auto">
@@ -72,17 +83,23 @@
         </div>
 
         <!-- Image Carousel -->
-        <div class="relative mb-10 carousel">
+        <div class="relative mb-10 carousel carousel-container">
             <div class="carousel-inner">
                 <img src="1.jpeg" alt="Memory 1">
                 <img src="2.jpeg" alt="Memory 2">
                 <img src="3.jpeg" alt="Memory 3">
+                <img src="4.jpg" alt="Memory 4">
+                <img src="5.jpg" alt="Memory 5">
+                <img src="6.jpg" alt="Memory 6">
             </div>
             <!-- Navigation Buttons -->
             <button id="prev" class="absolute top-1/2 left-4 bg-pink-500 text-white rounded-full w-10 h-10 transform -translate-y-1/2 hover:bg-pink-700">‹</button>
             <button id="next" class="absolute top-1/2 right-4 bg-pink-500 text-white rounded-full w-10 h-10 transform -translate-y-1/2 hover:bg-pink-700">›</button>
             <!-- Dots Indicator -->
             <div class="flex justify-center mt-4" id="dots-container">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>
                 <span class="dot"></span>

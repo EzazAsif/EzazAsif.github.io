@@ -93,17 +93,19 @@ document.addEventListener('DOMContentLoaded', function() {
         const changeElement = document.querySelector('.change');
         if (changeElement) {
             // Fade out
-            changeElement.classList.add('fade');
+            changeElement.style.transition = 'opacity 0.5s ease-in-out';
+            changeElement.style.opacity = '0';
 
             // Set a timeout to change the text after the fade-out duration
             setTimeout(() => {
                 // Update the current index to the next message
                 currentMessageIndex = (currentMessageIndex + 1) % messages.length;
+
+                // Update the text
                 changeElement.innerText = messages[currentMessageIndex];
 
                 // Fade in
-                changeElement.classList.remove('fade');
-                changeElement.style.opacity = '1'; // Reset opacity
+                changeElement.style.opacity = '1';
             }, 500); // Match the timeout with the duration of the fade-out (0.5s)
         }
     }
